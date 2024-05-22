@@ -1,0 +1,45 @@
+<mxfile host="65bd71144e">
+    <diagram id="JmYeXh15dWNBzjiQjOd4" name="第 1 页">
+        <mxGraphModel dx="1070" dy="539" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" style="edgeStyle=none;html=1;" edge="1" parent="1" source="2">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="240" y="310" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="" style="shape=offPageConnector;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="260" y="90" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="shape=lineEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="270" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Process Bar" style="swimlane;childLayout=stackLayout;horizontal=1;fillColor=none;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;strokeColor=none;stackBorder=10;stackSpacing=-12;resizable=1;align=center;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="414" y="220" width="296" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Step 1" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="5">
+                    <mxGeometry x="10" y="33" width="100" height="57" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Step 2" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="5">
+                    <mxGeometry x="98" y="33" width="100" height="57" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Step 3" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="5">
+                    <mxGeometry x="186" y="33" width="100" height="57" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Process Bar" style="swimlane;childLayout=stackLayout;horizontal=1;fillColor=none;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;strokeColor=none;stackBorder=10;stackSpacing=-12;resizable=1;align=center;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="450" y="10" width="296" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="Step 1" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="9">
+                    <mxGeometry x="10" y="33" width="100" height="57" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Step 2" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="9">
+                    <mxGeometry x="98" y="33" width="100" height="57" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Step 3" style="shape=step;perimeter=stepPerimeter;fixedSize=1;points=[];whiteSpace=wrap;html=1;" vertex="1" parent="9">
+                    <mxGeometry x="186" y="33" width="100" height="57" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
