@@ -1,79 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-
-
-
-        class TaskPro {
-            constructor() {
-                this.tasks = []
-                this.isRunning = false
-                this.currentTask = 0
-                this._next = async () => {
-                    this.currentTask++
-                    await this.runTask()
-                }
-            }
-            addTask(task) {
-                this.tasks.push(task)
-            }
-            run() {
-                if (this.isRunning || !this.tasks.length) return
-                this.runTask()
-            }
-            async runTask() {
-                if (this.currentTask >= this.tasks.length) {
-                    this.reset()
-                    return
-                }
-                const i = this.currentTask
-                const task = this.tasks[this.currentTask]
-                await task(this._next)
-                const j = this.currentTask
-                if (i == j) {
-                   await this._next()
-                }
-
-            }
-            reset() {
-                this.currentTask = 0
-                this.isRunning = false
-                this.tasks = []
-
-            }
-
+      class TaskPro {
+        constructor() {
+          this.tasks = [];
+          this.isRunning = false;
+          this.currentTask = 0;
+          this._next = async () => {
+            this.currentTask++;
+            await this.runTask();
+          };
         }
+        addTask(task) {
+          this.tasks.push(task);
+        }
+        run() {
+          if (this.isRunning || !this.tasks.length) return;
+          this.runTask();
+        }
+        async runTask() {
+          if (this.currentTask >= this.tasks.length) {
+            this.reset();
+            return;
+          }
+          const i = this.currentTask;
+          const task = this.tasks[this.currentTask];
+          await task(this._next);
+          const j = this.currentTask;
+          if (i == j) {
+            await this._next();
+          }
+        }
+        reset() {
+          this.currentTask = 0;
+          this.isRunning = false;
+          this.tasks = [];
+        }
+      }
 
-        const t = new TaskPro()
+      const t = new TaskPro();
 
-        t.addTask(async (_next) => {
-            console.log(1, 'start')
-            await _next()
-            console.log(1, 'end')
-        })
+      t.addTask(async (_next) => {
+        console.log(1, "start");
+        await _next();
+        console.log(1, "end");
+      });
 
-        t.addTask( async (_next) => {
-            console.log(2, 'start')
-            await _next()
-            console.log(2, 'end')
+      t.addTask(async (_next) => {
+        console.log(2, "start");
+        await _next();
+        console.log(2, "end");
+      });
 
-        })
+      t.addTask(() => {
+        console.log(3, "start");
+      });
 
-        t.addTask(() => {
-            console.log(3, 'start')
-        })
-
-        t.run() //  console.log(1,'end')最后
+      t.run(); //  console.log(1,'end')最后
     </script>
 
-</body>
+    <script>
+      function gen(issub) {
+        class Test {
+          constructor() {}
+        }
+        class SubTest extends Test {
+          constructor() {}
+        }
+        let test = new Test();
+        if (issub) {
+          test = new SubTest();
+        }
+        return test;
+      }
 
+      let a = gen(false);
+    </script>
+  </body>
 </html>
