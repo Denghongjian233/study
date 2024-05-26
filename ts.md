@@ -4,3 +4,5 @@
 
 调用任何方法的时候要检查类型
 fdsaf
+
+New line added automatically.
