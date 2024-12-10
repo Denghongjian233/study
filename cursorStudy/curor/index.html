@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <!-- 设置文档字符编码 -->
+    <meta charset="UTF-8" />
+    <!-- 设置移动端视口 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 页面标题 -->
+    <title>谷歌搜索</title>
+    <!-- 引入CSS样式文件 -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- 引入JavaScript文件，defer确保在HTML解析完成后执行 -->
+    <script src="flower.js" defer></script>
+  </head>
+  <body>
+    <!-- 花朵光标元素 -->
+    <div class="flower-cursor"></div>
+    <!-- 主容器 -->
+    <div class="container">
+      <!-- Logo区域 -->
+      <div class="logo">
+        <img
+          src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+          alt="Google"
+        />
+      </div>
+      <!-- 搜索框区域 -->
+      <div class="search-box">
+        <!-- 搜索表单，提交到Google搜索 -->
+        <form action="https://www.google.com/search" method="GET">
+          <!-- 无障碍访问标签 -->
+          <label for="search-input" class="visually-hidden">搜索</label>
+          <!-- 搜索输入框 -->
+          <input
+            type="text"
+            id="search-input"
+            name="q"
+            class="search-input"
+            placeholder="输入搜索内容"
+            title="搜索"
+          />
+          <!-- 按钮组 -->
+          <div class="buttons">
+            <!-- 搜索按钮 -->
+            <button type="submit">谷歌搜索</button>
+            <!-- 手气不错按钮 -->
+            <button
+              type="button"
+              onclick="window.location.href='https://www.google.com/doodles'"
+            >
+              手气不错
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

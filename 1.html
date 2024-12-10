@@ -2,86 +2,49 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <style>
+      /* 外部容器的样式 */
+      #outer {
+        height: 300px; /* 限制外部容器高度 */
+        overflow: hidden; /* 隐藏溢出内容 */
+        position: relative; /* 为了内部元素定位 */
+      }
+
+      /* 内部容器的样式 */
+      #inner {
+        height: 1500px; /* 内部容器的高度 */
+        overflow-y: auto; /* 启用垂直滚动 */
+      }
+    </style>
   </head>
 
   <body>
-    <script>
-      class TaskPro {
-        constructor() {
-          this.tasks = [];
-          this.isRunning = false;
-          this.currentTask = 0;
-          this._next = async () => {
-            this.currentTask++;
-            await this.runTask();
-          };
-        }
-        addTask(task) {
-          this.tasks.push(task);
-        }
-        run() {
-          if (this.isRunning || !this.tasks.length) return;
-          this.runTask();
-        }
-        async runTask() {
-          if (this.currentTask >= this.tasks.length) {
-            this.reset();
-            return;
-          }
-          const i = this.currentTask;
-          const task = this.tasks[this.currentTask];
-          await task(this._next);
-          const j = this.currentTask;
-          if (i == j) {
-            await this._next();
-          }
-        }
-        reset() {
-          this.currentTask = 0;
-          this.isRunning = false;
-          this.tasks = [];
-        }
-      }
-
-      const t = new TaskPro();
-
-      t.addTask(async (_next) => {
-        console.log(1, "start");
-        await _next();
-        console.log(1, "end");
-      });
-
-      t.addTask(async (_next) => {
-        console.log(2, "start");
-        await _next();
-        console.log(2, "end");
-      });
-
-      t.addTask(() => {
-        console.log(3, "start");
-      });
-
-      t.run(); //  console.log(1,'end')最后
-    </script>
+    <div id="outer">
+      <div id="inner">
+        <!-- 内容 -->
+        <div style="height: 500px; background-color: lightblue">内容块 1</div>
+        <div style="height: 500px; background-color: lightgreen">内容块 2</div>
+        <div style="height: 500px; background-color: lightcoral">内容块 3</div>
+        <div style="height: 500px; background-color: lightyellow">内容块 4</div>
+        <!-- 更多内容 -->
+      </div>
+    </div>
+    <button onclick="scrollInnerDivToBottom()">滚动到下方</button>
 
     <script>
-      function gen(issub) {
-        class Test {
-          constructor() {}
-        }
-        class SubTest extends Test {
-          constructor() {}
-        }
-        let test = new Test();
-        if (issub) {
-          test = new SubTest();
-        }
-        return test;
-      }
+      var a = 1;
+      debugger;
+      function scrollInnerDivToBottom() {
+        const outerDiv = document.getElementById("outer");
+        const innerDiv = document.getElementById("inner");
+        debugger;
 
-      let a = gen(false);
+        // 使用 outerDiv.scrollTop 来滚动外部容器
+        outerDiv.scrollTo({
+          top: innerDiv.scrollHeight, // 滚动到内部容器的总高度
+          behavior: "smooth", // 平滑滚动
+        });
+      }
     </script>
   </body>
 </html>

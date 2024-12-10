@@ -1,20 +1,17 @@
-
 function maxSubArray(nums: number[]): number {
+  // 初始化当前子数组和为第一个元素
+  let currentSubArraySum = nums[0];
+  // 初始化最大子数组和为第一个元素
 
-    // 初始化当前子数组和为第一个元素
-    let currentSubArraySum = nums[0];
-    // 初始化最大子数组和为第一个元素
+  // 从第二个元素开始遍历数组
+  for (let i = 1; i < nums.length; i++) {
+    // 更新当前子数组和，决定是继续加上当前元素还是从当前元素重新开始
+    currentSubArraySum = Math.max(nums[i], currentSubArraySum + nums[i]);
+    // 更新最大子数组和
+  }
 
-    // 从第二个元素开始遍历数组
-    for (let i = 1; i < nums.length; i++) {
-        // 更新当前子数组和，决定是继续加上当前元素还是从当前元素重新开始
-        currentSubArraySum = Math.max(nums[i], currentSubArraySum + nums[i]);
-        // 更新最大子数组和
-    }
-
-    return currentSubArraySum;
+  return currentSubArraySum;
 }
-
 
 // 跳跃游戏
 
@@ -47,4 +44,3 @@ function longestValidParentheses(s: string): number {
   return max;
 }
 // 最长公共前缀
-        

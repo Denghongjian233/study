@@ -1,0 +1,120 @@
+/* 重置所有元素的默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置页面主体样式 */
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh; /* 设置高度为视口高度 */
+    display: flex; /* 使用弹性布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+/* 主容器样式 */
+.container {
+    text-align: center; /* 文本居中 */
+}
+
+/* Logo区域样式 */
+.logo {
+    margin-bottom: 30px; /* 底部外边距 */
+}
+
+/* 搜索框容器样式 */
+.search-box {
+    width: 100%;
+    max-width: 584px; /* 最大宽度 */
+    margin: 0 auto; /* 水平居中 */
+}
+
+/* 搜索输入框样式 */
+.search-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px; /* 圆角边框 */
+    font-size: 16px;
+    outline: none; /* 移除焦点轮廓 */
+}
+
+/* 搜索框悬停和焦点状态 */
+.search-input:hover,
+.search-input:focus {
+    box-shadow: 0 1px 6px rgba(32,33,36,.28); /* 添加阴影效果 */
+    border-color: rgba(223,225,229,0);
+}
+
+/* 按钮容器样式 */
+.buttons {
+    margin-top: 20px;
+}
+
+/* 按钮基础样式 */
+button {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    height: 36px;
+    cursor: pointer; /* 鼠标指针样式 */
+}
+
+/* 按钮悬停状态 */
+button:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+
+/* 花朵光标样式 */
+.flower-cursor {
+    width: 60px;
+    height: 60px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><g fill="none" stroke="%23FF69B4" stroke-width="2"><circle cx="50" cy="50" r="20"/><path d="M50,30 C50,30 20,50 50,70 C80,50 50,30 50,30z"/><path d="M30,50 C30,50 50,20 70,50 C50,80 30,50 30,50z"/></g><circle cx="50" cy="50" r="8" fill="%23FFD700"/></svg>');
+    position: fixed; /* 固定定位 */
+    pointer-events: none; /* 禁用鼠标事件 */
+    z-index: 9999; /* 置于顶层 */
+    opacity: 0;
+    transition: all 0.3s ease; /* 过渡动画 */
+    transform-origin: center;
+    animation: flowerFloat 2s ease-in-out infinite; /* 应用浮动动画 */
+}
+
+/* 花朵浮动动画关键帧 */
+@keyframes flowerFloat {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+/* 鼠标悬停时显示花朵 */
+body:hover .flower-cursor {
+    opacity: 1;
+}
+
+/* 视觉隐藏类（用于无障碍） */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+} 
